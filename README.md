@@ -1,0 +1,2 @@
+# Faster
+Thema para Wordpress
