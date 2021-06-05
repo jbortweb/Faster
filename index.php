@@ -7,6 +7,39 @@
     <title>Creacion de temas</title>
 </head>
 <body>
-    <h1>Creacion de themas</h1>
+<header class="Header">
+<div class="Logo">
+<a href="" class="Logo"></a>
+</div>
+<nav class="Menu">
+<ul>
+    <li><a href="">Sección1</a></li>
+    <li><a href="">Sección2</a></li>
+    <li><a href="">Sección3</a></li>
+    <li><a href="">Sección4</a></li>
+    <li><a href="">Sección5</a></li>
+</ul>
+</nav>
+</header>
+<main class="Main">
+<article class="Content">
+<h2>Contenido</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis laboriosam soluta impedit id totam? Aliquam, quae veniam aspernatur, adipisci ex sunt, dolor ratione saepe nostrum reiciendis odio. Blanditiis, consectetur sunt?</p>
+</article>
+<aside class="Sidebar">
+<h2>Sidebar</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis accusamus quidem nesciunt magnam repudiandae eius placeat, dolores architecto illum id maiores ducimus unde similique vel eveniet. Illo odit architecto iusto!</p>
+</aside>
+</main>
+<footer class="Footer">
+<nav class="SocialMedia">
+    <ul>
+        <li><a href="">Redes 1</a></li>
+        <li><a href="">Redes 1</a></li>
+        <li><a href="">Redes 1</a></li>
+        <li><a href="">Redes 1</a></li>
+        <li><a href="">Redes 1</a></li>
+    </ul>
+</nav></footer>
 </body>
 </html>
