@@ -1,4 +1,4 @@
-/*!
+/*
 Theme Name:Faster WP Theme
 Theme URI:https://tuwebentrelineas.es
 Author:Jbortweb
@@ -11,3 +11,10 @@ Tags:one-column,two-colums,right-sidebar,flexible-header,accessibility-ready,cus
 Text Domain:fwpt
 */
 
+html{
+
+    font-family: 'Raleway',sans-serif;
+    font-size: 16px;
+    background-color: rgb(160, 156, 156);
+    color:rgb(9, 10, 7);
+}
