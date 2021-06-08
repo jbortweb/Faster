@@ -1,2 +1,2 @@
 # Faster
-Thema para Wordpress
+Desarrollo completo de Thema para Wordpress
