@@ -11,7 +11,7 @@
     <header class="Header">
 
         <div class="Logo">
-            <a href="" class="Logo">Logo</a>
+            <a href="<?php echo esc_url(home_url('/'))?>" class="Logo">Logo</a>
         </div>
 
         <nav class="Menu">
