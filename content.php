@@ -1,17 +1,22 @@
 <article class="Content">
 
-    <h1>Creación de Temas</h1>
+    <h1>Creación de Temas</h1>        
 
-        <h2>Contenido</h2>
+        <?php if(have_posts()):while(have_posts()):the_post();?> <!--Si hay contenido en entradas, cuando haya contenido, publicar contenido-->
 
-            <?php if(have_posts()):while(have_posts()):the_post();?> <!--Si hay contenido en entradas, cuando haya contenido, publicar contenido-->
+            <article>
 
-                <p>Contenido de la entrada</p>
+                <h2><?php the_title();?></h2>
+                
+            </article>
+            
+            <hr>
 
-            <?php endwhile;else:?>
+        <?php endwhile;else:?>
 
-                <p>El contenido solicitado no existe</p>
+            <p>El contenido solicitado no existe</p>
 
-            <?php endif;?>
+        <?php endif;?>
+        
 
 </article>
