@@ -2,18 +2,16 @@
 
 <footer class="Footer">
 
-    <nav class="SocialMedia">
-        <ul>
-            <li><a href="">Redes 1</a></li>
-            <li><a href="">Redes 1</a></li>
-            <li><a href="">Redes 1</a></li>
-            <li><a href="">Redes 1</a></li>
-            <li><a href="">Redes 1</a></li>
-        </ul>
-    </nav>
+<?php 
+wp_nav_menu(array(
+    'theme_location'=>'social_menu', //El lugar
+    'container'=> 'nav',    //Tipo de contenedor
+    'container_class'=>'SocialMedia' //Nombre de la clase que le ponemos
+));
+;?>
 
     <div>
-        <small>&copy,2021 by tuwebentrelineas.es</small>
+        <small>&copy,<?php echo date('Y');?> by tuwebentrelineas.es</small>
     </div>
 
 </footer>
