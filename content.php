@@ -28,6 +28,9 @@
                     <a href="<?php the_permalink();?>"><?php the_title();?></a> <!-- Enlace permanente -->
                 </h2>
 
+                <img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>">
+
+
                 <?php the_excerpt();?>  <!--Muestra el extracto del articulo -->
 
                 <p><?php the_category(', ');?></p>  <!--  Las categorias, separadas por comas, si no le pasas parametros, te hace una lista, ver documentacion para ver más parametros  --> 
@@ -56,3 +59,11 @@
         
 </article>
 
+<section class="Pagination">
+    
+    <?php //previous_post_link();?> 
+    <?php //next_post_link();?> <!--Flechas de paginacion-->
+
+    <?php echo paginate_links();?> <!--Numeracion de las paginas-->
+
+</section>

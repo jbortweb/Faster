@@ -22,10 +22,22 @@ if(!function_exists('fwpt_scripts')):
         wp_enqueue_style('google-fonts'); /*Nombre con el que registramos la accion*/
         wp_enqueue_style('style');
         wp_enqueue_script('scripts'); 
-        wp_enqueue_script('jquery');
+        wp_enqueue_script('jquery'); /*jQuery viene registrado en wordpress*/
 
     }
     
 endif;
 
 add_action('wp_enqueue_scripts',"fwpt_scripts");
+
+if(!function_exists('fwpt_setup')):
+
+    function fwpt_setup(){
+        //https://developer.wordpress.org/reference/functions/add_theme_support/
+    add_theme_support('post-thumbnails');//imagen destacada de la entrada
+    }
+
+endif;
+
+add_action('after_setup_theme','fwpt_setup');
+
