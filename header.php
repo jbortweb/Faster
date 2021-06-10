@@ -14,17 +14,25 @@
             <a href="<?php echo esc_url(home_url('/'))?>" class="Logo">Logo</a>
         </div>
 
+        <?php 
+        if(has_nav_menu('main_menu')): //Si tenemos un menu de navegacion
+            wp_nav_menu(array(
+                'theme_location'=>'main_menu', //El lugar
+                'container'=> 'nav',    //Tipo de contenedor
+                'container_class'=>'Menu' //Nombre de la clase que le ponemos
+            ));
+        else:
+        ?>
         <nav class="Menu">
 
             <ul>
-                <li><a href="">Sección1</a></li>
-                <li><a href="">Sección2</a></li>
-                <li><a href="">Sección3</a></li>
-                <li><a href="">Sección4</a></li>
-                <li><a href="">Sección5</a></li>
+
+                <?php wp_list_pages('title_li');?> <!--Menu a partir de las paginas estaticas-->
             </ul>
 
         </nav>
+        <?php endif;?>
+        
 
     </header>
 

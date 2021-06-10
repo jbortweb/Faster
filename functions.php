@@ -41,3 +41,15 @@ endif;
 
 add_action('after_setup_theme','fwpt_setup');
 
+if(!function_exists('fwpt_menus')):    //Activamos menus
+    function fwpt_menus(){
+
+     register_nav_menus(array(
+         'main_menu' =>__('Menú Principal', 'fwpt'),  //Añadimos los menus que querramos en el array
+         'social_menu' =>__('Menú Redes Sociales','fwpt')  //Primer parametro el nombre, segundo parametro es para las traducciones, se pone el nombre que se ha puesto en el text Domain del style.css
+     ));
+    }
+
+endif;
+
+add_action('init','fwpt_menus'); // Añadimos menus creados al cargar la pagina
