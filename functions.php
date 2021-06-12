@@ -23,12 +23,12 @@ if(!function_exists('fwpt_scripts')):
         wp_enqueue_style('style');
         wp_enqueue_script('scripts'); 
         wp_enqueue_script('jquery'); /*jQuery viene registrado en wordpress*/
-
     }
     
 endif;
 
     add_action('wp_enqueue_scripts',"fwpt_scripts");
+
 
 if(!function_exists('fwpt_setup')):
 
@@ -48,6 +48,7 @@ if(!function_exists('fwpt_setup')):
 endif;
 
     add_action('after_setup_theme','fwpt_setup');
+
 
 if(!function_exists('fwpt_menus')):    //Activamos menus
     function fwpt_menus(){
@@ -77,7 +78,7 @@ if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
     ));
 
     register_sidebar (array(
-        'name' =>__('Sidebar Pié de Página','fwpt'),  //Añadimos los widgets que querramos en el array
+        'name' =>__('Sidebar Pié de Página','fwpt'),
         'id' =>'footer_sidebar',
         'description' =>__('Este es el sidebar del pié de página','fwpt'),
         'before_widget'=>'<article id="%1$s" class="Widget%2$s">',

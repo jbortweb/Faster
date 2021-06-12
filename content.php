@@ -43,11 +43,13 @@
 
                 <div class="the-content">
 
-                    <?php the_content();?>
+                    <?php //the_content();?>
 
                 </div>
             
             </article>
+
+            <?php comments_template();?>
             
             <hr>
 
