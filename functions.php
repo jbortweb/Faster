@@ -28,18 +28,26 @@ if(!function_exists('fwpt_scripts')):
     
 endif;
 
-add_action('wp_enqueue_scripts',"fwpt_scripts");
+    add_action('wp_enqueue_scripts',"fwpt_scripts");
 
 if(!function_exists('fwpt_setup')):
 
     function fwpt_setup(){
         //https://developer.wordpress.org/reference/functions/add_theme_support/
     add_theme_support('post-thumbnails');//imagen destacada de la entrada
+
+    add_theme_support('html5',array(
+    'comment-list',
+    'comment-form',
+    'search-form',
+    'gallery',
+    'caption'
+    ));
     }
 
 endif;
 
-add_action('after_setup_theme','fwpt_setup');
+    add_action('after_setup_theme','fwpt_setup');
 
 if(!function_exists('fwpt_menus')):    //Activamos menus
     function fwpt_menus(){
@@ -52,7 +60,7 @@ if(!function_exists('fwpt_menus')):    //Activamos menus
 
 endif;
 
-add_action('init','fwpt_menus'); // Añadimos menus creados al cargar la pagina
+    add_action('init','fwpt_menus'); // Añadimos menus creados al cargar la pagina
 
 
 if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
@@ -61,8 +69,18 @@ if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
     register_sidebar (array(
         'name' =>__('Sidebar Principal','fwpt'),  //Añadimos los widgets que querramos en el array
         'id' =>'main_sidebar',
-        'description' =>__('Este es el sidebar principal'),
-        'before_widget'=>'<article id="%1$s"class="Widget%2$s">',
+        'description' =>__('Este es el sidebar principal','fwpt'),
+        'before_widget'=>'<article id="%1$s" class="Widget%2$s">',
+        'after_widget' => '</article>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+    register_sidebar (array(
+        'name' =>__('Sidebar Pié de Página','fwpt'),  //Añadimos los widgets que querramos en el array
+        'id' =>'footer_sidebar',
+        'description' =>__('Este es el sidebar del pié de página','fwpt'),
+        'before_widget'=>'<article id="%1$s" class="Widget%2$s">',
         'after_widget' => '</article>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
@@ -71,4 +89,4 @@ if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
 
 endif;
 
-add_action('widgets_init','fwpt_register_sidebars'); // Añadimos widgets creados al cargar la pagina
+    add_action('widgets_init','fwpt_register_sidebars'); // Añadimos widgets creados al cargar la pagina
