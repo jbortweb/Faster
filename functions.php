@@ -53,3 +53,22 @@ if(!function_exists('fwpt_menus')):    //Activamos menus
 endif;
 
 add_action('init','fwpt_menus'); // Añadimos menus creados al cargar la pagina
+
+
+if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
+    function fwpt_register_sidebars(){
+
+    register_sidebar (array(
+        'name' =>__('Sidebar Principal','fwpt'),  //Añadimos los widgets que querramos en el array
+        'id' =>'main_sidebar',
+        'description' =>__('Este es el sidebar principal'),
+        'before_widget'=>'<article id="%1$s"class="Widget%2$s">',
+        'after_widget' => '</article>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+    }
+
+endif;
+
+add_action('widgets_init','fwpt_register_sidebars'); // Añadimos widgets creados al cargar la pagina
