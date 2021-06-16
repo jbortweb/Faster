@@ -17,4 +17,40 @@ html{
     font-size: 16px;
     background-color: rgb(160, 156, 156);
     color: rgb(9, 10, 7);
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.Header,
+.Main,
+.Footer{
+    border:thin solid #7F7D7D;
+    margin-bottom: 1rem;
+}
+
+.Main{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: 'content sidebar'
+                         'other sidebar';
+}
+
+.Content {
+    grid-area: content;
+}
+
+.Sidebar {
+    grid-area: sidebar;
+}
+
+.Other {
+    grid-area: other;
 }

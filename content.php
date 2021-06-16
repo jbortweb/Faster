@@ -61,7 +61,7 @@
         
 </article>
 
-<section class="Pagination">
+<section class="Pagination Other">
     
     <?php //previous_post_link();?> 
     <?php //next_post_link();?> <!--Flechas de paginacion-->
