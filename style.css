@@ -41,6 +41,14 @@ html{
     grid-template-rows: repeat(2,auto);
     grid-template-areas: 'content sidebar'
                          'other sidebar';
+    grid: gap 1rem;
+}
+
+.Main{
+
+    background-color: #CCC;
+    padding: 1rem;
+    color:#222;
 }
 
 .Content {
