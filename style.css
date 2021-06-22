@@ -4,7 +4,7 @@ Theme URI:https://tuwebentrelineas.es
 Author:Jbortweb
 Author URI:https://tuwebentrelineas.es
 Description:Thema multifuncional, con opciones de diseño y personalizacion.
-Version:1.1.1
+Version:1.2.1
 License:GNU General Public License v2 or later
 License URI:http://www.gnu.org/licenses/gpl-2.0.html
 Tags:one-column,two-colums,right-sidebar,flexible-header,accessibility-ready,custom-colors,custom-header,footer-widgets,post-formats,rtl-languaje-support,stick-post,theme-options,threaded-comments,translation-ready
@@ -15,8 +15,8 @@ html{
 
     font-family: 'Raleway',sans-serif;
     font-size: 16px;
-    background-color: rgb(160, 156, 156);
-    color: rgb(9, 10, 7);
+    background-color: rgb(0, 0, 0);
+    color: rgb(59, 59, 59);
     box-sizing: border-box;
 }
 
@@ -35,16 +35,21 @@ html{
     margin-bottom: 1rem;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 .Main{
     display:grid;
     grid-template-columns:2fr 1fr;
     grid-template-rows: repeat(2,auto);
     grid-template-areas: 'content sidebar'
                          'other sidebar';
-    grid: gap 1rem;
+    grid-gap: 1rem;
 }
 
-.Main{
+.Main>*{
 
     background-color: #CCC;
     padding: 1rem;
@@ -55,10 +60,29 @@ html{
     grid-area: content;
 }
 
+.Content hr{
+    border:thick dotted rgb(59, 59, 59);
+    margin:3rem auto;
+    width: 80%;
+}
+
 .Sidebar {
     grid-area: sidebar;
 }
 
 .Other {
     grid-area: other;
+}
+
+.Widget,
+.Pagination{
+    background-color: #AAA;
+    margin-bottom:2rem;
+    padding:1rem;
+}
+
+.Error404{
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
 }

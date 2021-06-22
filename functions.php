@@ -7,7 +7,7 @@
  * @package WordPress
  * @subpackage fwpt
  * @since 1.0.0
- * @version 1.1.1
+ * @version 1.2.1
  */
 
 if(!function_exists('fwpt_scripts')):

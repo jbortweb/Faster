@@ -1,6 +1,4 @@
 <article class="Content">
-
-    <h1>Creación de Temas</h1> 
     
         <!--Loop o contenido, en este caso para entradas -->
 
@@ -8,27 +6,29 @@
 
             <article>
 
-                <h2><?php the_title();?></h2> <!--Funcion que llama al titulo y lo imprime directamente-->
+               <!-- <h2><?php //the_title();?></h2> --> <!--Funcion que llama al titulo y lo imprime directamente-->
                 
                 <?php 
                 
-                $titulo= 'Titulo: '.get_the_title();
-                echo $titulo; //En esta opcion colocamos y concatenamos cadena de texto
+                // $titulo= 'Titulo: '.get_the_title();
+                // echo $titulo;   
+                    //En esta opcion colocamos y concatenamos cadena de texto
 
-                //Otras opciones serian:
+                    //Otras opciones serian:
 
                 //echo get_the_title(); Si el objeto no esta definido en wordpress lo imprimimos a traves de echo
 
                 //the_title('After','Before',echo); Antes del titulo, despues y echo si fuera necesario. Un ejemplo añadiendo clases seria asi:('<h3 class="TitlePost">','</h3>',echo);
                 ?>
 
+                <img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>">
+
                 <br>
 
                 <h2>
                     <a href="<?php the_permalink();?>"><?php the_title();?></a> <!-- Enlace permanente -->
-                </h2>
-
-                <img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>">
+                    
+                </h2>            
 
 
                 <?php the_excerpt();?>  <!--Muestra el extracto del articulo -->
@@ -40,17 +40,9 @@
                 <p> <?php the_time(get_option('date_format'));?></p> <!--Fecha con el formato elegido en los ajustes de wordpress -->
 
                 <p><?php the_author_posts_link();?></p>
-
-                <div class="the-content">
-
-                    <?php //the_content();?>
-
-                </div>
             
             </article>
 
-            <?php comments_template();?>
-            
             <hr>
 
         <?php endwhile;else:?>
