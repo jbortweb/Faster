@@ -51,6 +51,17 @@ if(!function_exists('fwpt_setup')):
         'flex-height' =>true,
         'flex-width'  =>true
     ));
+
+    add_theme_support('custom-background',array(
+        'default-color'=>'DDD',
+        'default-image'=>get_template_directory_uri().
+        '/img/background-image.png',
+        'default-repeat'=>'repeat',
+        'default-position-x'=>'',
+        'default-position-y'=>'',
+        'default-size'=>'',
+        'default-attachment'=>'fixed'
+    ));
     }
 
 endif;
@@ -99,3 +110,6 @@ if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
 endif;
 
     add_action('widgets_init','fwpt_register_sidebars'); // Añadimos widgets creados al cargar la pagina
+
+    require_once get_template_directory().
+    '/inc/custom-header.php';

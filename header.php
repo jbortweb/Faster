@@ -8,6 +8,8 @@
     <?php wp_head();?>
 </head>
 <body>
+
+    <?php get_header('wordpress');?>
     <header class="Header">
 
         <div class="Logo">
