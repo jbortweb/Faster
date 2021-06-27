@@ -43,6 +43,14 @@ if(!function_exists('fwpt_setup')):
     'gallery',
     'caption'
     ));
+
+    //Logo personalizado
+    add_theme_support('custom-logo',array(
+        'height'=>100,
+        'width' =>100,
+        'flex-height' =>true,
+        'flex-width'  =>true
+    ));
     }
 
 endif;
