@@ -90,7 +90,7 @@ if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
         'name' =>__('Sidebar Principal','fwpt'),  //Añadimos los widgets que querramos en el array
         'id' =>'main_sidebar',
         'description' =>__('Este es el sidebar principal','fwpt'),
-        'before_widget'=>'<article id="%1$s" class="Widget%2$s">',
+        'before_widget'=>'<article id="%1$s" class="Widget %2$s">',
         'after_widget' => '</article>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
