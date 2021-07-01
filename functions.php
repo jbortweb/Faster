@@ -62,6 +62,8 @@ if(!function_exists('fwpt_setup')):
         'default-size'=>'',
         'default-attachment'=>'fixed'
     ));
+    //Activa la actualización de widget en el personalizador
+    add_theme_support('customize-selective-refresh-widgets');
     }
 
 endif;
