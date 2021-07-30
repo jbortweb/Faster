@@ -16,4 +16,15 @@ if(!function_exists('fwpt_customize_register')):
     }
     }
 endif;
-;?>
+
+if(!function_exists('fwpt_customize_blogname')):
+    function fwpt_customize_blogname(){
+    bloginfo('name');
+    }
+endif;
+
+if(!function_exists('fwpt_customize_blogdescription')):
+    function fwpt_customize_blogdescription(){
+    bloginfo('description');
+    }
+endif;

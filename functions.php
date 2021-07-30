@@ -7,7 +7,7 @@
  * @package WordPress
  * @subpackage fwpt
  * @since 1.0.0
- * @version 1.2.1
+ * @version 1.3
  */
 
 if(!function_exists('fwpt_scripts')):
@@ -118,4 +118,10 @@ endif;
 
     require_once get_template_directory().
     '/inc/customizer.php';
+
+    require_once get_template_directory().
+    '/inc/custom-login.php';
+
+    require_once get_template_directory().
+    '/inc/custom-admin.php';
     
