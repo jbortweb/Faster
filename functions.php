@@ -7,7 +7,7 @@
  * @package WordPress
  * @subpackage fwpt
  * @since 1.0.0
- * @version 1.3
+ * @version 2.0
  */
 
 if(!function_exists('fwpt_scripts')):
@@ -32,9 +32,21 @@ endif;
 
 if(!function_exists('fwpt_setup')):
 
-    function fwpt_setup(){
-        //https://developer.wordpress.org/reference/functions/add_theme_support/
-    add_theme_support('post-thumbnails');//imagen destacada de la entrada
+    function fwpt_setup(){ //https://developer.wordpress.org/reference/functions/add_theme_support/
+
+    //Activar distintos idiomas
+        //Recursos
+            //https://developer.wordpress.org/themes/functionality/internationalization/
+            //https:make.wordpress.org/polyglots/handbook/
+        //Herramientas
+            //https://www.icanlocalize.com/tools/php_scanner
+            //https://poedit.net/
+
+    load_theme_textdomain('fwpt',get_template_directory().'/languages');
+
+    
+    //imagen destacada de la entrada
+    add_theme_support('post-thumbnails');
 
     add_theme_support('html5',array(
     'comment-list',
@@ -62,6 +74,7 @@ if(!function_exists('fwpt_setup')):
         'default-size'=>'',
         'default-attachment'=>'fixed'
     ));
+
     //Activa la actualización de widget en el personalizador
     add_theme_support('customize-selective-refresh-widgets');
     }
@@ -102,7 +115,7 @@ if(!function_exists('fwpt_register_sidebars')):    //Activamos widgets
         'name' =>__('Sidebar Pié de Página','fwpt'),
         'id' =>'footer_sidebar',
         'description' =>__('Este es el sidebar del pié de página','fwpt'),
-        'before_widget'=>'<article id="%1$s" class="Widget%2$s">',
+        'before_widget'=>'<article id="%1$s" class="Widget %2$s">',
         'after_widget' => '</article>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'

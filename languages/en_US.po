@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+
+#. Text in echo
+#: TheFaster/sidebar.php:9
+msgid "Buscar"
+msgstr "Search"
+
+#. Text in function
+#: TheFaster/functions.php:1
+msgid "Este es el sidebar del pié de página"
+msgstr "This is the sidebar of the footer"
+
+#. Text in function
+#: TheFaster/functions.php:1
+msgid "Este es el sidebar principal"
+msgstr "This is the main sidebar"
+
+#. Text in function
+#: TheFaster/functions.php:1
+msgid "Menú Principal"
+msgstr "Main Menu"
+
+#. Text in function
+#: TheFaster/functions.php:1
+msgid "Menú Redes Sociales"
+msgstr "Social Media Menu"
+
+#. Text in function
+#: TheFaster/functions.php:1
+msgid "Sidebar Pié de Página"
+msgstr "Sidebar Footer"
+
+#. Text in function
+#: TheFaster/functions.php:1
+msgid "Sidebar Principal"
+msgstr "Main Sidebar"
