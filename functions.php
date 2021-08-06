@@ -41,9 +41,6 @@ if(!function_exists('fwpt_setup')):
         //Herramientas
             //https://www.icanlocalize.com/tools/php_scanner
             //https://poedit.net/
-
-    load_theme_textdomain('fwpt',get_template_directory().'/languages');
-
     
     //imagen destacada de la entrada
     add_theme_support('post-thumbnails');
