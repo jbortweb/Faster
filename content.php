@@ -2,7 +2,13 @@
     
         <!--Loop o contenido, en este caso para entradas -->
 
-        <?php if(have_posts()):while(have_posts()):the_post();?> <!--Si hay contenido en entradas (have_post), cuando haya contenido, publicar contenido-->
+        <?php
+
+        query_posts(null);
+        
+        if(have_posts()):
+        while(have_posts()):
+        the_post();?> <!--Si hay contenido en entradas (have_post), cuando haya contenido, publicar contenido-->
 
             <article>
 
@@ -49,7 +55,7 @@
 
             <p>El contenido solicitado no existe</p>
 
-        <?php endif;?>
+        <?php endif; wp_reset_postdata();?>
         
 </article>
 

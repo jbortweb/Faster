@@ -43,9 +43,10 @@ img{
 .Main{
     display:grid;
     grid-template-columns:2fr 1fr;
-    grid-template-rows: repeat(2,auto);
-    grid-template-areas: 'content sidebar'
-                         'other sidebar';
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas:'wp-query wp-query' 
+                        'content sidebar'
+                        'other sidebar';
     grid-gap: 1rem;
 }
 
@@ -74,6 +75,10 @@ img{
     grid-area: other;
 }
 
+.WP-Query{
+    grid-area: wp-query;
+}
+
 .Widget,
 .Pagination{
     background-color: #AAA;
@@ -91,4 +96,21 @@ img{
     background-color: #EEE;
     width: 100px;
     height: auto;
+}
+
+/* ********WP-Query********* */
+
+.WP-Query {
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: var(--container-width);
+    background-color: var(--border-color);
+
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px, 1fr));
+    grid-gap: 1rem;
+}
+
+.WP-Query figure{
+text-align: center;
 }
