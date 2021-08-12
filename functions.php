@@ -7,7 +7,7 @@
  * @package WordPress
  * @subpackage fwpt
  * @since 1.0.0
- * @version 2.0
+ * @version 3.0
  */
 
 if(!function_exists('fwpt_scripts')):
@@ -134,4 +134,17 @@ endif;
 
     require_once get_template_directory().
     '/inc/custom-admin.php';
+    
+    require_once get_template_directory().
+    '/inc/custom-post-types.php';
+    
+    require_once get_template_directory().
+    '/inc/custom-taxonomies.php';
+
+    require_once get_template_directory().
+    '/inc/custom-metaboxes.php';
+
+    require_once get_template_directory().
+    '/inc/custom-pre-get-posts.php';
+
     

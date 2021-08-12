@@ -4,7 +4,7 @@
 
         <?php
 
-        query_posts(null);
+        //query_posts(null); --Anula el query post, pero lo tenemos activado
         
         if(have_posts()):
         while(have_posts()):
@@ -55,7 +55,9 @@
 
             <p>El contenido solicitado no existe</p>
 
-        <?php endif; wp_reset_postdata();?>
+        <?php endif; wp_reset_postdata();
+        wp_reset_query();
+        ?>
         
 </article>
 
