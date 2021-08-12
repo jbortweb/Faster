@@ -46,9 +46,23 @@
                 <p> <?php the_time(get_option('date_format'));?></p> <!--Fecha con el formato elegido en los ajustes de wordpress -->
 
                 <p><?php the_author_posts_link();?></p>
+
+                <!--Añadimos metadatos-->
+                <div>
+                    <h3>Custom Fields</h3> 
+                    <?php the_meta();?>
+                    <p><?php echo get_post_meta(get_the_ID(),'Origen',true);?>
+                    </p>  
+                    <p><?php echo get_post_meta(get_the_ID(),'Actividad',true);?>
+                    </p>
+                    <p><?php echo get_post_meta(get_the_ID(),'mb_origen_raza',true);?>
+                    </p>
+                    <p><?php echo get_post_meta(get_the_ID(),'mb_esperanza_vida',true);?>
+                    </p>
+                </div>
             
             </article>
-
+ 
             <hr>
 
         <?php endwhile;else:?>
