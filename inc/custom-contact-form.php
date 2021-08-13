@@ -85,4 +85,18 @@ if(!function_exists('fwpt_contact_form_comments')):
 }
 endif;
 
+//https://codex.wordpress.org/Shortcode_API
+//https://codex.wordpress.org/Function_Reference/add_Shortcode
+
+if(!function_exists('fwpt_contact_form')):
+    function fwpt_contact_form($atts){
+        echo '
+        <div>
+        <h1>".$atts[title]."</h1>
+        </div>
+        ';
+    }
+endif;
+
+add_shortcode('contact_form','fwpt_contact_form');
 ?>
