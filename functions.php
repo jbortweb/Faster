@@ -147,4 +147,6 @@ endif;
     require_once get_template_directory().
     '/inc/custom-pre-get-posts.php';
 
+    require_once get_template_directory().
+    '/inc/custom-theme-options.php';
     

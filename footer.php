@@ -22,7 +22,20 @@ wp_nav_menu(array(
     <?php endif;?>
 
     <div>
-        <small>&copy,<?php echo date('Y');?> by tuwebentrelineas.es</small>
+        <p>
+            <small>
+            <?php if(get_option('fwpt_footer_text')!==''):
+                echo esc_html(get_option('fwpt_footer_text'));
+            else:
+            ?>
+            
+            &copy,<?php echo date('Y');?> by tuwebentrelineas.es
+
+            <?php 
+                endif;
+            ?>
+            </small>
+        </p>
     </div>
 
 </footer>
