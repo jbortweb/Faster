@@ -27,7 +27,7 @@ if(!function_exists('fwpt_wp_header_style')):
 
     function fwpt_wp_header_style(){
         $header_text_color = get_header_textcolor();
-    }
+    
     ?>
         <style>
 
@@ -37,5 +37,5 @@ if(!function_exists('fwpt_wp_header_style')):
         </style>
 
     <?php 
-
+    }
 endif;
