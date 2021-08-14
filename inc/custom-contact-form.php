@@ -156,6 +156,11 @@ endif;
 
                 $wpdb->insert($table,$form_data,$form_formats);
 
+                $url=get_page_by_title('Gracias por tus comentarios');
+
+                wp_redirect(get_permalink($url->ID));
+                exit();
+
             endif;
             
         }
