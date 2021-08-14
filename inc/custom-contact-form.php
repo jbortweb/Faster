@@ -103,6 +103,7 @@ if(!function_exists('fwpt_contact_form')):
             <input type="text" name="subject" placeholder='Asunto a tratar'>
             <textarea name='comments' cols="50" rows="5" placeholder="Escribe tus comentarios"></textarea>
             <input type="submit" value="Enviar">
+            <input type='hidden' name='send_contact_form' value='1'>
         </form>
 <?php         
     }
@@ -129,5 +130,39 @@ if(!function_exists('fwpt_contact_scripts')):
 endif;
 
     add_action('wp_enqueue_scripts',"fwpt_contact_scripts");
+
+    if(!function_exists('fwpt_contact_form_save')):
+        function fwpt_contact_form_save(){
+            if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['send_contact_form'])):
+                
+                global $wpdb;
+
+                $name=sanitize_text_field($_POST['name']);
+                $email=sanitize_text_field($_POST['email']);
+                $subject=sanitize_text_field($_POST['subject']);
+                $comments=sanitize_text_field($_POST['comments']);
+
+                $table=$wpdb->prefix.'contact_form';
+
+                $form_data=array(
+                    'name'=>$name,
+                    'email'=>$email,
+                    'subject'=>$subject,
+                    'comments'=>$comments,
+                    'contact_date'=>date('Y-m-d H:m:s')
+                );
+
+                $form_formats=array('%s','%s','%s','%s','%s');
+
+                $wpdb->insert($table,$form_data,$form_formats);
+
+            endif;
+            
+        }
+        
+    endif;
+    
+        add_action('init',"fwpt_contact_form_save");
+    
 
 ?>
