@@ -66,15 +66,29 @@ if(!function_exists('fwpt_contact_form_comments')):
                         </tr>
                     </thead>
                         <tbody>
+                            <?php 
+                            global $wpdb;
+                            $table = $wpdb->prefix.'contact_form';
+                            $rows = $wpdb->get_results("SELECT*FROM $table", ARRAY_A);
+                            //echo'<pre>';
+                            //var_dump($rows);
+                            //echo'</pre>
+                            foreach ($rows as $row):
+                            
+                            ?>
                             <tr>
-                                <td>Valor 1</td>
-                                <td>Valor 2</td>
-                                <td>Valor 3</td>
-                                <td>Valor 4</td>
-                                <td>Valor 5</td>
-                                <td>Valor 6</td>
-                                <td>Valor 7</td>
+                                <td><?php echo $row ['contact_id'];?></td>
+                                <td><?php echo $row ['name'];?></td>
+                                <td><?php echo $row ['email'];?></td>
+                                <td><?php echo $row ['subject'];?></td>
+                                <td><?php echo $row ['comments'];?></td>
+                                <td><?php echo $row ['contact_date'];?></td>
+                                <td>
+                                    <a href='#' class= 'u-delete' data-contac-id="<?php echo $row['contact_id'];?>">Eliminar</a>
+                                </td>
+                                
                             </tr>
+                            <?php endforeach;?>
                         </tbody>
                 </table>
                 <?php submit_button();?>
@@ -131,6 +145,8 @@ endif;
 
     add_action('wp_enqueue_scripts',"fwpt_contact_scripts");
 
+    
+
     if(!function_exists('fwpt_contact_form_save')):
         function fwpt_contact_form_save(){
             if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['send_contact_form'])):
@@ -168,6 +184,29 @@ endif;
     endif;
     
         add_action('init',"fwpt_contact_form_save");
+
+    if(!function_exists('fwpt_contact_admin_scripts')):
+        function fwpt_contact_admin_scripts(){
+        
+                wp_register_script('contact-form-admin-script', get_template_directory_uri().'/js/contact_form_admin.js',array('jquery'),'1.0.0',true);        
+                wp_enqueue_script('contact-form-admin-script');  
+                
+        //Pasamos valores de PHP a JS en notacion de objeto con ajax
+
+        wp_localize_script(
+            'contact-form-admin-script',
+            'contact_form',
+            array(
+                'name'=>'Modulo de comentarios de Contacto',
+                'ajax_url'=>admin_url('admin-ajax.php')
+            )
+        );
+            
+        }
+            
+    endif;
+        
+            add_action('admin_enqueue_scripts',"fwpt_contact_admin_scripts");
     
 
 ?>
