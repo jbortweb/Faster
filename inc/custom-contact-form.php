@@ -84,7 +84,7 @@ if(!function_exists('fwpt_contact_form_comments')):
                                 <td><?php echo $row ['comments'];?></td>
                                 <td><?php echo $row ['contact_date'];?></td>
                                 <td>
-                                    <a href='#' class= 'u-delete' data-contac-id="<?php echo $row['contact_id'];?>">Eliminar</a>
+                                    <a href='#' class= 'u-delete' data-contact-id="<?php echo $row['contact_id'];?>">Eliminar</a>
                                 </td>
                                 
                             </tr>
@@ -200,13 +200,40 @@ endif;
                 'name'=>'Modulo de comentarios de Contacto',
                 'ajax_url'=>admin_url('admin-ajax.php')
             )
-        );
-            
+        );            
         }
             
     endif;
         
             add_action('admin_enqueue_scripts',"fwpt_contact_admin_scripts");
+
+            if(!function_exists('fwpt_contact_form_delete')):
+                function fwpt_contact_form_delete(){
+                    if(isset($_POST['id'])):
+                        global $wpdb;
+
+                        $table = $wpdb->prefix.'contact_form';
+                        $delete_row = $wpdb->delete($table,array('contact_id'=>$_POST['id']),array('%d'));
+
+                        if($delete_row){
+                            $response = array(
+                                'err'=>false,
+                                'msg'=>'Se elimino el comentario con el ID'.$_POST['id']
+                            );
+                        }else {
+                            $response = array(
+                                'err'=>true,
+                                'msg'=>'No se elimino el comentario con el ID'.$_POST['id']
+                            );
+                        }
+
+                        die(json_encode($response));
+
+                    endif;
+                }
+            endif;
+
+            add_action('wp_ajax_fwpt_contact_form_delete',"fwpt_contact_form_delete")
     
 
 ?>
